@@ -1,0 +1,12 @@
+{
+  "name": "service-worker-plugin",
+  "version": "0.0.1",
+  "description": "Trying to create a webpack service worker plugin, because i have nothing else left to do in life",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/Guru107/service-worker-plugin.git",
+    "type": "git"
+  },
+  "author": "Guru107 <guruak107@gmail.com>",
+  "license": "GPL-3.0"
+}
