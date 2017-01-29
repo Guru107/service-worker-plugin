@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint ./src/** --ext .js",
-    "build":"babel src --out-dir dist"
+    "build":"babel src --out-dir dist",
+    "prepublish": "npm run build"
   },
   "repository": {
     "url": "https://github.com/Guru107/service-worker-plugin.git",
