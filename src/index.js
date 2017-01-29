@@ -140,13 +140,11 @@ class ServiceWorkerPlugin {
             return plugin instanceof webpack.optimize.UglifyJsPlugin
         })
 
-        const serviceWorkerOptions = {
-            assets
-        }
-        const serviceWorkerOptionsInline = JSON.stringify(serviceWorkerOptions,null,minify ? 0 : 2)
+        const generatedAssets = assets
+        const generatedAssetsInline = JSON.stringify(generatedAssets,null,minify ? 0 : 2)
 
         const source = `
-            var serviceWorkerOptions = ${serviceWorkerOptionsInline};
+            const generatedAssets = ${generatedAssetsInline};
             ${asset.source()}`.trim()
 
         compilation.assets[this.options.filename] = {

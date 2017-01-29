@@ -1,6 +1,6 @@
 
 console.log(global)
-console.log(serviceWorkerOptions)
+console.log(generatedAssets)
 console.log('SERVICE WORKER')
 
 

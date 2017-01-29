@@ -3,20 +3,25 @@
   "version": "0.0.1",
   "description": "Trying to create a webpack service worker plugin, because i have nothing else left to do in life",
   "main": "lib/index.js",
-  "scripts": {
-      "start":"webpack-dev-server --config example/webpack.config.js"
-  },
+  "scripts": {},
   "repository": {
     "url": "https://github.com/Guru107/service-worker-plugin.git",
     "type": "git"
   },
+  "keywords": [
+    "service worker",
+    "webpack",
+    "plugin"
+  ],
   "author": "Guru107 <guruak107@gmail.com>",
   "license": "GPL-3.0",
   "dependencies": {
-    "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
-    "babel-preset-es2015": "^6.22.0",
-    "minimatch": "^3.0.3",
-    "webpack": "2.2.0"
+    "minimatch": "3.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "6.22.1",
+    "babel-loader": "6.2.10",
+    "babel-preset-es2015": "6.22.0",
+    "webpack": "1.14.0"
   }
 }
