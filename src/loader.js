@@ -1,5 +1,5 @@
-let path = require('path'),
-    fs = require('fs')
+import path from 'path'
+import fs from 'fs'
 
 module.exports = function defaultExport(){}
 
@@ -19,7 +19,7 @@ module.exports.pitch = function pitch() {
         }
 
         const source = `
-            var serviceWorkerOption = ${this.query.slice(1)};
+            var pluginOptions = ${this.query.slice(1)};
             ${template}
         `.trim()
 

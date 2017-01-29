@@ -1,7 +1,7 @@
-let path = require('path')
-let SingleEntryPlugin = require('webpack/lib/SingleEntryPlugin')
-let minimatch = require('minimatch')
-let webpack = require('webpack')
+import path from 'path'
+import SingleEntryPlugin from 'webpack/lib/SingleEntryPlugin'
+import minimatch from 'minimatch'
+import webpack from 'webpack'
 const COMPILER_NAME = 'service-worker-child-compiler'
 
 function validatePaths(assets, options) {
@@ -26,7 +26,7 @@ function validatePaths(assets, options) {
     })
 }
 
-class ServiceWorkerPlugin {
+export default class ServiceWorkerPlugin {
 
     constructor(options){
         this.warnings = []
@@ -70,7 +70,7 @@ class ServiceWorkerPlugin {
 
             this.handleMake(compilation, compiler).then(()=>{
                 callback()
-            },(err)=>{
+            },()=>{
 
                 callback(new Error('Something went wrong in make'))
             })
@@ -155,4 +155,4 @@ class ServiceWorkerPlugin {
     }
 }
 
-module.exports = ServiceWorkerPlugin
+

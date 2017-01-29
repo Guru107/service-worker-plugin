@@ -1,6 +1,7 @@
 var path = require('path')
-var ServiceWorkerPlugin = require('../src')
+var ServiceWorkerPlugin = require('../dist').default
 var webpack = require('webpack')
+console.log(ServiceWorkerPlugin)
 module.exports = {
     context:__dirname,
     entry: './index.js',

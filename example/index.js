@@ -1,4 +1,4 @@
-var SWPlugin = require('../src/runtime.js')
+var SWPlugin = require('../dist/runtime.js').default
 if('serviceWorker' in navigator){
     SWPlugin.register({scope:'/'})
 }
