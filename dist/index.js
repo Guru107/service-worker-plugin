@@ -116,6 +116,7 @@ var ServiceWorkerPlugin = function () {
             childCompiler.apply(new _SingleEntryPlugin2.default(compiler.context, this.options.entry));
 
             childCompiler.plugin('compilation', function (compilation2) {
+
                 if (compilation2.cache) {
                     if (!compilation2.cache[COMPILER_NAME]) {
                         compilation2.cache[COMPILER_NAME] = {};
@@ -123,9 +124,12 @@ var ServiceWorkerPlugin = function () {
                     compilation2.cache = compilation2.cache[COMPILER_NAME];
                 }
             });
-
+            var _self = this;
             return new Promise(function (resolve, reject) {
-                childCompiler.runAsChild(function (err) {
+                childCompiler.runAsChild(function (err, chunk, compilation3) {
+
+                    delete compilation3.assets[_self.options.filename];
+                    console.log(compilation3.assets[_self.options.filename]);
                     if (err) {
                         reject(err);
                         return;

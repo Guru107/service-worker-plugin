@@ -68,7 +68,8 @@ export default class ServiceWorkerPlugin {
                [].push.apply(compilation,this.warnings)
            }
 
-            this.handleMake(compilation, compiler).then(()=>{
+        this.handleMake(compilation, compiler)
+        .then(()=>{
                 callback()
             },()=>{
 
@@ -93,6 +94,7 @@ export default class ServiceWorkerPlugin {
         )
 
         childCompiler.plugin('compilation', (compilation2) => {
+
             if(compilation2.cache){
                 if(!compilation2.cache[COMPILER_NAME]) {
                     compilation2.cache[COMPILER_NAME] = {}
@@ -101,9 +103,12 @@ export default class ServiceWorkerPlugin {
 
             }
         })
-
+        const _self = this
         return new Promise( (resolve,reject) => {
-            childCompiler.runAsChild(err => {
+            childCompiler.runAsChild((err,chunk,compilation3) => {
+
+                delete compilation3.assets[_self.options.filename]
+
                 if(err){
                     reject(err)
                     return
