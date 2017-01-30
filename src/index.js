@@ -98,6 +98,7 @@ export default class ServiceWorkerPlugin {
                     compilation2.cache[COMPILER_NAME] = {}
                 }
                 compilation2.cache = compilation2.cache[COMPILER_NAME]
+
             }
         })
 
@@ -144,7 +145,7 @@ export default class ServiceWorkerPlugin {
         const generatedAssetsInline = JSON.stringify(generatedAssets,null,minify ? 0 : 2)
 
         const source = `
-            const generatedAssets = ${generatedAssetsInline};
+             self.generatedAssets = ${generatedAssetsInline};
             ${asset.source()}`.trim()
 
         compilation.assets[this.options.filename] = {

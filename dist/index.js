@@ -166,7 +166,7 @@ var ServiceWorkerPlugin = function () {
             var generatedAssets = assets;
             var generatedAssetsInline = JSON.stringify(generatedAssets, null, minify ? 0 : 2);
 
-            var _source = ('\n            const generatedAssets = ' + generatedAssetsInline + ';\n            ' + asset.source()).trim();
+            var _source = ('\n             self.generatedAssets = ' + generatedAssetsInline + ';\n            ' + asset.source()).trim();
 
             compilation.assets[this.options.filename] = {
                 source: function source() {
