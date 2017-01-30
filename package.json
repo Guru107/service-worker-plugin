@@ -2,7 +2,7 @@
   "name": "service-worker-plugin",
   "version": "0.0.1",
   "description": "Trying to create a webpack service worker plugin, because i have nothing else left to do in life",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "lint": "eslint ./src/** --ext .js",
     "build":"babel src --out-dir dist",
